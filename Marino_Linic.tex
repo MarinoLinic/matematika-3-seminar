@@ -1,0 +1,323 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc} 
+\usepackage{mathtools}  
+\usepackage{diffcoeff}  
+\usepackage{xfrac}  
+\usepackage{blindtext}
+\usepackage{hyperref}
+\usepackage{graphicx}
+\graphicspath{ {./images/} }
+\renewcommand{\contentsname}{Tablica sadržaja}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=black,
+    filecolor=green,      
+    urlcolor=magenta,
+    pdftitle={Marino Linic},
+    pdfpagemode=FullScreen,
+    }
+
+\begin{document}
+\\~\\
+\centerline{\large {\MakeUppercase{Fakultet informatike i digitalnih tehnologija}}\par}
+\centerline{\MakeUppercase{Preddiplomski studij informatike}}
+\\~\\
+\\~\\
+\\~\\
+\\~\\
+\\~\\
+\\~\\
+\\~\\
+\centerline{\Large {Seminar iz kolegija Matematika 3}\par}
+\\~\\
+\centerline{{\LARGE \textbf{\MakeUppercase{Odredivanje parcijalne derivacije}}\par}}
+\\~\\
+\centerline{{\LARGE \textbf{\MakeUppercase{drugog reda funkcije}}\par}}
+\\~\\
+\\~\\
+\\~\\
+\\~\\
+\\~\\
+\\~\\
+\\~\\
+\\~\\
+\\~\\
+\\~\\
+Autor: Marino Linić
+\\
+Mentorica: Dr. sc. Marija Maksimović
+\\
+\mbox{}
+\vfill
+\centerline{2. veljače 2023. u Rijeci}
+
+\thispagestyle{empty} 
+
+\pagebreak
+
+\tableofcontents
+
+\pagebreak
+
+\section{Uvod}
+
+\subsection{Zadatak}
+Odredite parcijalne derivacije drugog reda funkcije:
+$$
+f(x,y) = arcsin \sqrt{\frac{x-y}{x}}
+$$
+u točki \textit{T}(9,5). Nacrtajte funkciju \textit{f} i njezine parcijalne derivacije prvog reda.
+\\~\\
+Zadatak je potrebno samostalno prikazati u programskom jeziku Python koristeći relevantne biblioteke. U ovom seminaru ćemo prikazati ručno riješene zadatke i usporediti s rezultatima izračuna biblioteke.
+
+\pagebreak
+
+\section{Teorija}
+
+\subsection{Funkcija više varijabli}
+
+\subsection{Derivacija}
+
+\subsection{Parcijalna derivacija}
+
+Parcijalna derivacija funkcije $f:D\rightarrow \mathbb{R} , D \subseteq \mathbb{R}^n$, po varijabli $x_i$
+u tocki $T_0=(x_1^0, x_2^0,\cdots , x_n^0)$ je derivacija funkcije jedne varijable
+$f_i:D_i \rightarrow \mathbb{R} , D_i \subseteq \mathbb{R}$ , definirane s
+ $$f_i(x)=f(x_1^0, \cdots , x_{i-1}^0, x, x_{i+1}^0,\cdots , x_n^0), \quad \quad x \in D_i ,$$ u toˇcki $x_i^0$. Vrijedi,
+\begin{equation*}
+    \frac{\partial f (T_o)}{\partial x_i}=f_i '(x_i^0)=\displaystyle{\lim_{x \to x_i^0}}\frac{f_i(x)-f_i(x_i^0)}{x-x_i^0}
+\end{equation*}
+Ako za funkciju f u tocki $T_o$ postoje parcijalne derivacije $f_{x_i} '(T_o)$ po svim varijablama $x_i$, onda kazemo da je funkcija $f$ derivabilna
+u tocki $T_o$ . Ako je funkcija $f$ derivabilna u svakoj tocki $T \in D$, onda kazemo da je $f$ derivabilna funkcija.
+
+Za parcijalne derivacije koristimo oznake:
+\begin{equation*}
+    \frac{\partial f (T_o)}{\partial x_i} \; \equiv \; f_{x_i} '(T_0) \; \equiv \; f_{x_i} (T_0)
+\end{equation*}
+Neka je $A \subseteq D$ skup svih tocaka $T \in D$ u kojima postoji parcijalna
+derivacija $f_{x_i} '(T)$ po varijabli $x_i$. Funkciju $f_{x_i} ' : A \rightarrow \mathbb{R}$ zovemo
+parcijalna derivacija funkcije $f$ po varijabli $x_i$. Parcijalnu derivaciju
+po varijabli $x_j$
+funkcije $f_{x_i} '$
+zovemo parcijalna derivacija drugog reda
+funkcije $f$ po varijablama $\; x_i
+, \: x_j$ i oznaˇcavamo s
+
+\begin{equation*}
+    \frac{\partial^2 f }{\partial x_i \: \partial x_j} \; \equiv \; f_{x_i \: x_j} '' \; \equiv \; f_{x_i \: x_j}\; .
+\end{equation*}
+Analogno definiramo parcijalnu derivaciju tre´ceg reda funkcije $f$ po
+varijablama $x_i, x_j, x_k$:
+\begin{equation*}
+    \frac{\partial^3 f }{\partial x_i \: \partial x_j \: \partial x_k} \; \equiv \; f_{x_i \: x_j \: x_k} ''' \; \equiv \; f_{x_i \: x_j \: x_k}\; .
+\end{equation*}
+
+\subsection{Derivacije višeg reda}
+
+\pagebreak
+
+\section{Ručno riješeni zadaci}
+\subsection{Parcijalna derivacija prvog reda po x}
+$$
+\frac{\partial f}{\partial x} &= \frac{1}{2x} \sqrt{\frac{y}{x-y}}
+$$
+\\~\\
+U točki $T(9, 5)$,
+\begin{flalign*}
+    \frac{\partial f}{\partial x} &= \frac{1}{2 \cdot 9} \sqrt{\frac{5}{9-5}} &\\
+    &= \frac{1}{18} \sqrt{\frac{5}{4}} &\\
+    &= \frac{\sqrt{5}}{2 \cdot 18}  &\\ 
+    &= \frac{\sqrt{5}}{36} = 0.06  &\\
+\end{flalign*}
+
+\subsection{Parcijalna derivacija prvog reda po y}
+$$
+\frac{\partial f}{\partial y} &= \frac{-1}{2\sqrt{y(x-y)}}
+$$
+\\~\\
+U točki $T(9, 5)$,
+\begin{flalign*}
+    \frac{\partial f}{\partial y} &= \frac{-1}{2\sqrt{y(x-y)}} &\\
+    &= \frac{-1}{2\sqrt{5(9-5)}} &\\
+    &= \frac{-1}{2\sqrt{5 \cdot 4}} &\\ 
+     &= \frac{-1}{2 \cdot 2 \sqrt{5}} &\\ 
+    &= \frac{-1}{4\sqrt{5}} = -0.11  &\\
+\end{flalign*}
+
+\pagebreak
+
+\subsection{Parcijalna derivacija drugog reda po x}
+$$
+\frac{\partial^2 f}{\partial x^2} &= \frac{2y \sqrt{y} -3x\sqrt{y} }{4x^2(x-y)^{\frac{3}{2}}} 
+$$
+\\~\\
+U točki $T(9, 5)$,
+\begin{flalign*}
+    \frac{\partial^2 f}{\partial x^2} &= \frac{2\cdot 5 \sqrt{5} -3\cdot 9\sqrt{5} }{4 \cdot 9^2(9-5)^{\frac{3}{2}}} &\\ 
+    &= \frac{10 \sqrt{5} -27\sqrt{5} }{4 \cdot 81 \cdot (4)^{\frac{3}{2}}} &\\
+     &= \frac{ -17\sqrt{5} }{4 \cdot 81 \cdot \sqrt{4} \cdot 4  } &\\
+     &= \frac{ -17\sqrt{5} }{4 \cdot 81 \cdot 8  } &\\
+     &=\frac{ -17\sqrt{5} }{2592  }= 0.015
+\end{flalign*}
+\\~\\
+\subsection{Parcijalna derivacija drugog reda po y}
+$$
+\frac{\partial^2 f}{\partial y^2} &= \frac{x-2y}{4(y(x-y))^{\frac{3}{2}}}
+$$
+\\~\\
+U točki $T(9, 5)$,
+\begin{flalign*}
+    \frac{\partial^2 f}{\partial y^2} &= \frac{9-2 \cdot 5}{4(5(9-5))^{\frac{3}{2}}} &\\
+    &= \frac{9-10}{4(5\cdot 4)^{\frac{3}{2}}} = \frac{-1}{4 \cdot \sqrt{5}\cdot 5 \cdot 2^3} &\\
+    &= \frac{-1}{160\sqrt{5}}=0.003 \
+\end{flalign*}
+
+\pagebreak
+
+\subsection{Parcijalna derivacija drugog reda po xy}
+$$
+\frac{\partial^2 f}{\partial xy} &= \frac{1}{4\sqrt{y}(x-y)^{\frac{3}{2}}}
+$$
+\\~\\
+U točki $T(9, 5)$,
+\begin{flalign*}
+    \frac{\partial^2 f}{\partial xy} &= \frac{1}{4\sqrt{5}}\cdot\frac{1}{(9-5)^{\frac{3}{2}}} =\frac{1}{4\sqrt{5}}\cdot\frac{1}{4^{\frac{3}{2}}}= \frac{1}{4\sqrt{5} \cdot 2^3} &\\ 
+    &= \frac{1}{4 \cdot 8\sqrt{5}} &\\
+    &= \frac{1}{32\sqrt{5}} = 0.014
+\end{flalign*}
+
+\pagebreak
+
+\section{Programski kôd u Pythonu}
+Napomena: sav kôd može se pregledati online u Googleovoj Python bilježnici na ovoj poveznici: 
+\newline \href{https://colab.research.google.com/drive/1J-faTA8mjOc46u1WNkfacBiw92qrqLD6}{https://colab.research.google.com/drive/1J-faTA8mjOc46u1WNkfacBiw92qrqLD6}
+\\
+\newline Ili na Repl.it kao pokretljiva Python skripta, ali treba oko 15 sekundi za pokretanje cijelog programa:
+\newline \href{https://replit.com/@marinolinic/Marino-Linic#main.py}{https://replit.com/@marinolinic/Marino-Linic}
+\\
+\newline GitHub poveznica s Python bilježnicom, skriptom, LaTeX kôdom i seminarom u PDF formatu nalazi se ovdje:
+\newline \href{https://github.com/MarinoLinic/matematika-3-seminar}{https://github.com/MarinoLinic/matematika-3-seminar}
+
+\subsection{Biblioteke}
+\includegraphics[width=12cm]{Screenshot_1497.png}
+\\ 
+\\
+Uključujemo biblioteku \texttt{sympy}:
+\\ - \textbf{sqrt}: ovo je funkcija koja računa korijen.
+\\ - \textbf{asin}: ovo je funkcija koja računa arkus sinus.
+\\ - \textbf{diff}: ovo je funkcija koja računa derivacije i parcijalne derivacije.
+\\ - \textbf{plot3d}: ovo je funkcija koja crta funkciju u trodimenzionalnom prostoru.
+\\ - \textbf{symbols}: ovo je funkcija koja definirane simbole uključuje u matematičke operacije.
+
+\pagebreak
+
+\subsection{Računanje parcijalnih derivacija}
+\\~\\
+\includegraphics[width=12cm]{Screenshot_1498.png}
+\\~\\
+U nizu sljedećih slika koristimo funkciju \texttt{sympy.diff()} koja nam derivira izraz. Prima dva argumenta: prvi je funkcija, koju smo upisali u varijablu \texttt{f}, a drugi je po kojem simbolu se derivira u slučaju da ima više od jednoga, poput ovoga s parcijalnom derivacijom.
+\\~\\
+No, prije svega koristimo \texttt{sympy.symbols()} kako bi program znao tretirati slova u izrazu kao nepoznanice. \texttt{sympy.asin()} funkcija odgovara računanju arkusa sinusa, a \texttt{sympy.sqrt()} korijena. 
+\\~\\
+U kôdu za svaku ćeliju u komentarima opisujemo po čemu se derivira, a naposljetku ubacujemo ime varijable s ciljem da \texttt{sympy} biblioteka prikaže izraz koristeći LaTeX.
+\\~\\
+Na vrhu ćelije, prva linija govori nam dakle što program radi, odnosno po čemu izraz derivira, a zadnja nam prikazuje rezultat. Računamo parcijalne derivacije prvoga reda po x i y te parcijalne derivacije drugoga reda po x, y i xy.
+\\~\\
+\includegraphics[width=12cm]{Screenshot_1499.png}
+\\~\\
+\includegraphics[width=12cm]{Screenshot_1500.png}
+\\~\\
+\includegraphics[width=12cm]{Screenshot_1501.png}
+\\~\\
+\includegraphics[width=12cm]{Screenshot_1502.png}
+\\~\\
+\includegraphics[width=12cm]{Screenshot_1503.png}
+\\~\\
+\pagebreak
+\\
+Nakon što smo izračunali parcijalne derivacije, izračunati ćemo ih i u točki T(9,5). Koristimo funkciju \texttt{subs()} kojoj prosljedujemo varijablu tipa \texttt{dict} te slijedno u funkciji \texttt{f(x,y)} uvrštavamo 9 i 5. \textit{Primijetimo da rezultati odgovaraju onima koje smo mi ručno izračunali u prijašnjem dijelu ovoga seminara.}
+\\ \\
+\includegraphics[width=12cm]{Screenshot_1510.png}
+
+\pagebreak
+
+\subsection{Crtanje funkcije i parcijalnih derivacija prvoga reda}
+\subsubsection{Funkcija}
+Prvo prikazujemo funkciju:
+$$
+f(x,y) = arcsin \sqrt{\frac{x-y}{x}}
+$$
+koristeći programsku funkciju \texttt{plot3d()} biblioteke \texttt{sympy}. Prvi argument je funkcija grafa, a drugi argument naslov grafikona. Prije toga smo napravili naslov tipa varijable \texttt{string} spajajući samo funkciju i njezin naziv.
+\\~\\
+\includegraphics[width=12 cm]{Screenshot_1515.png}
+
+\pagebreak
+
+\subsubsection{Parcijalna derivacija prvog reda po x}
+Prikazujemo parcijalnu derivaciju po x (izračun \texttt{sympy} biblioteke):
+$$
+\frac{\partial f}{\partial x} &= \frac{x\sqrt{\frac{x-y}{x}} \left(\frac{1}{2x} - \frac{x-y}{2x^2}\right)}{\sqrt{1-\frac{x-y}{x}} (x-y)}
+$$
+odnosno po ručno izračunatom rezultatu:
+$$
+\frac{\partial f}{\partial x} &= \frac{1}{2x} \sqrt{\frac{y}{x-y}}
+$$
+\\~\\
+\\~\\
+\includegraphics[width=12 cm]{Screenshot_1511.png}
+
+\pagebreak
+
+\subsubsection{Parcijalna derivacija prvog reda po y}
+Prikazujemo parcijalnu derivaciju po y (izračun \texttt{sympy} biblioteke):
+$$
+\frac{\partial f}{\partial y} &= -\frac{\sqrt{\frac{x-y}{x}}}{2\sqrt{1-\frac{x-y}{x}} (x-y)}
+$$
+odnosno po ručno izračunatom rezultatu:
+$$
+\frac{\partial f}{\partial y} &= \frac{-1}{2\sqrt{y(x-y)}}
+$$
+\\~\\
+\\~\\
+\includegraphics[width=12 cm]{Screenshot_1512.png}
+
+\pagebreak
+
+\section{Zaključak}
+Spomenut ćemo još jednom dakle rezultate parcijalnih derivacija drugoga reda kao rješenje za zadatak ovog seminara:
+\\~\\
+\textbf{Parcijalna derivacija drugog reda po x:}
+$$
+\frac{\partial^2 f}{\partial x^2} &= \frac{2y \sqrt{y} -3x\sqrt{y} }{4x^2(x-y)^{\frac{3}{2}}} 
+$$
+\\~\\
+U točki $T(9, 5)$,
+\begin{flalign*}
+    \frac{\partial^2 f}{\partial x^2} &=\frac{ -17\sqrt{5} }{2592}
+\end{flalign*}
+\\~\\
+\textbf{Parcijalna derivacija drugog reda po y}
+$$
+\frac{\partial^2 f}{\partial y^2} &= \frac{x-2y}{4(y(x-y))^{\frac{3}{2}}}
+$$
+\\~\\
+U točki $T(9, 5)$,
+\begin{flalign*}
+    \frac{\partial^2 f}{\partial y^2} &= \frac{-1}{160\sqrt{5}}
+\end{flalign*}
+\\~\\
+\textbf{Parcijalna derivacija drugog reda po xy}
+$$
+\frac{\partial^2 f}{\partial xy} &= \frac{1}{4\sqrt{y}(x-y)^{\frac{3}{2}}}
+$$
+\\~\\
+U točki $T(9, 5)$,
+\begin{flalign*}
+    \frac{\partial^2 f}{\partial xy} &= \frac{1}{32\sqrt{5}}
+\end{flalign*}
+
+\pagebreak
+
+\section{Literatura}
+
+\end{document}
