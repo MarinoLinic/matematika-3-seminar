@@ -24,6 +24,9 @@ d2fdy2 = diff(dfdy, y)
 # Parcijalna derivacija drugog reda po xy
 d2fdxdy = diff(dfdx, y)
 
+# Parcijalna derivacija drugog reda po yx
+d2fdydx = diff(dfdy, x)
+
 # Parcijalna derivacija po x u točki T(9,5)
 dfdx_T = dfdx.subs({x: 9, y: 5})
 # subs() je metoda sympy za uvrštavanje vrijednosti u formulu
@@ -40,6 +43,9 @@ d2fdy2_T = d2fdy2.subs({x: 9, y: 5})
 # Parcijalna derivacija drugog reda po xy u točki T(9,5)
 d2fdxdy_T = d2fdxdy.subs({x: 9, y: 5})
 
+# Parcijalna derivacija drugog reda po xy u točki T(9,5)
+d2fdydx_T = d2fdydx.subs({x: 9, y: 5})
+
 print("{} {}".format("f(x,y) =", f))
 print("\n")
 print("{} {}".format("Parcijalna derivacija prvog reda po x:", dfdx))
@@ -52,6 +58,8 @@ print("{} {}".format("Parcijalna derivacija drugog reda po y:", d2fdy2))
 print("\n")
 print("{} {}".format("Parcijalna derivacija drugog reda po xy:", d2fdxdy))
 print("\n")
+print("{} {}".format("Parcijalna derivacija drugog reda po yx:", d2fdydx))
+print("\n")
 print("{} {}".format("Parcijalna derivacija po x u točki T(9,5):", dfdx_T))
 print("{} {}".format("Parcijalna derivacija po y u točki T(9,5):", dfdy_T))
 print("{} {}".format("Parcijalna derivacija drugog reda po x u točki T(9,5):",
@@ -60,6 +68,8 @@ print("{} {}".format("Parcijalna derivacija drugog reda po y u točki T(9,5):",
                      d2fdy2_T))
 print("{} {}".format("Parcijalna derivacija drugog reda po xy u točki T(9,5):",
                      d2fdxdy_T))
+print("{} {}".format("Parcijalna derivacija drugog reda po yx u točki T(9,5):",
+                     d2fdydx_T))
 
 # prikazivanje funkcije u trodimenzionalnom prostoru
 funkcija = "Funkcija: " + str(f) # određivanje naslova kao string
@@ -72,3 +82,15 @@ plot3d(dfdx, title=derivacija_x)
 # prikazivanje prve derivacije po y u trodimenzionalnom prostoru
 derivacija_y = "Derivacija prvog reda po y:\n" + str(dfdy)
 plot3d(dfdy, title=derivacija_y)
+
+# prikazivanje druge derivacije po x u trodimenzionalnom prostoru
+# derivacija2_x = "Derivacija drugog reda po x:\n" + str(d2fdx2)
+# plot3d(d2fdx2, title=derivacija2_x)
+
+# prikazivanje druge derivacije po x u trodimenzionalnom prostoru
+# derivacija2_y = "Derivacija drugog reda po y:\n" + str(d2fdy2)
+# plot3d(d2fdy2, title=derivacija2_y)
+
+# prikazivanje druge derivacije po xy u trodimenzionalnom prostoru
+# derivacija2_xy = "Derivacija drugog reda po xy:\n" + str(d2fdxdy)
+# plot3d(d2fdxdy, title=derivacija2_xy)

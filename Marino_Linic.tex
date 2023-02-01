@@ -245,7 +245,9 @@ U točki $T(9, 5)$,
 $$
 \therefore \frac{\partial^2 f}{\partial xy} = \frac{\partial^2 f}{\partial yx}
 $$
-
+\\~\\
+\\~\\
+Napomena: U ostatku seminara neće se prikazivati $\frac{\partial^2 f}{\partial yx}$ jer je jednaka $\frac{\partial^2 f}{\partial xy}$. No, u Python kôdu nalazi se svaki izračun.
 
 \pagebreak
 
@@ -299,6 +301,10 @@ Na vrhu ćelije, prva linija govori nam dakle što program radi, odnosno po čem
 Nakon što smo izračunali parcijalne derivacije, izračunati ćemo ih i u točki T(9,5). Koristimo funkciju \texttt{subs()} kojoj prosljedujemo varijablu tipa \texttt{dict} te slijedno u funkciji \texttt{f(x,y)} uvrštavamo 9 i 5. \textit{Primijetimo da rezultati odgovaraju onima koje smo mi ručno izračunali u prijašnjem dijelu ovoga seminara.}
 \\ \\
 \includegraphics[width=12cm]{Screenshot_1510.png}
+\\
+\includegraphics[width=12cm]{Screenshot_1523.png}
+\\~\\
+Naposlijetku dodajemo printanje svih vrijednosti u konzoli. Koristimo funkciju \texttt{format} kako bi ubacili vrijednosti u prostor vitičastih zagrada. Funkcija prima onoliko argumenata koliko vitičastih zagrada postoji.
 
 \pagebreak
 
@@ -345,6 +351,17 @@ $$
 \pagebreak
 
 \section{Dodaci}
+Sljedeće linije kôda su zakomentirane. Može se reproducirati ove grafikone odkomentiranjem.
+\\
+\includegraphics[width=10cm]{Screenshot_1519.png}
+\\~\\
+\includegraphics[width=10cm]{Screenshot_1520.png}
+\\~\\
+\includegraphics[width=10cm]{Screenshot_1521.png}
+\\~\\
+\includegraphics[width=10cm]{Screenshot_1522.png}
+\\
+Ovdje možemo vidjeti da ručno izračunata parcijalna derivacija daje isti grafikon kao i onaj od \texttt{sympy} biblioteke.
 
 \pagebreak
 
