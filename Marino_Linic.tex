@@ -1,5 +1,6 @@
 \documentclass{article}
 \usepackage[utf8]{inputenc} 
+\usepackage{amssymb}
 \usepackage{mathtools}  
 \usepackage{diffcoeff}  
 \usepackage{xfrac}  
@@ -72,47 +73,90 @@ Zadatak je potrebno samostalno prikazati u programskom jeziku Python koristeći 
 
 \pagebreak
 
-\section{Teorija}
-
-\subsection{Funkcija više varijabli}
+\section{Teorijska pozadina}
 
 \subsection{Derivacija}
+
+Derivacija je osnova infinitezimalnog računa. Derivacija funkcije u točki prikazuje se kao nagib krivulje u tom trenutku, jer pokazuje kojom brzinom funkcija mijenja vrijednost u istom tom trenutku. Nagib krivulje odražava brzi rast ili pad funkcije u točki, što odgovara brzini promjene funkcije. Ta slika nam omogućava da jednostavno i vizualno razumijemo promjene funkcije u takvim situacijama.
+\\~\\
+Prisjetimo se da za koeficijent smjera tangente vrijedi:
+\begin{equation*}
+    k_t = \lim\limits_{\Delta x \rightarrow 0} \frac{f(x_0 + \Delta x)-f(x_0)}{\Delta x}
+\end{equation*}
+Odnosno za koeficijent smjera sekante:
+\begin{equation*}
+    k_s = \frac{f(x)-f(x_0)}{x - x_0} = \frac{\Delta f}{\Delta x}
+\end{equation*}
+\\
+Derivacijom se dobiva nova funkcija. Za vrijednost nezavisne varijable, derivacija je u toj točki jednaka 1 ako funkcija raste, odnosno ako se povećava vrijednost funkcije, jednako brzo kao i nezavisna varijabla; ako funkcija raste brže/sporije, derivacija je veća/manja od 1, te jednaka nuli ako se funkcija ne mijenja. Analogno, ako funkcija pada (umanjuje se vrijednost funkcije dok argument raste), derivacija je negativna. Za neke funkcije derivacija ne postoji u nekim (ili u svim) točkama. Ako derivacija postoji, kaže se da je funkcija derivabilna u tim točkama ili u tome dijelu svoje domene.\textsuperscript{1}
+\\~\\
+\subsubsection{Definicija derivacije}
+Neka je zadana funkcija $f:〈a,b〉 \rightarrow \mathbb{R}$ i neka je $x_0 \in 〈a,b〉$. Derivacija funkcije u točki $x_0$ je broj
+$$
+f'(x_0) = \lim\limits_{\Delta x \rightarrow 0} \frac{\Delta f}{\Delta x} = \lim\limits_{\Delta x \rightarrow 0} \frac{f(x_0 + \Delta x) - f(x_0)}{\Delta x}
+$$ 
+ukoliko postoji navedeni limes.\textsuperscript{2}
+\\~\\
+\subsubsection{Primjer derivacije}
+$f(x) = x^3$
+\\
+$f'(x) = 3x^2$
+
+\pagebreak
+
+\subsection{Funkcija više varijabli}
+Neka je $S \subset \mathbb{R}^n$. Funkcija $f : S \rightarrow R$ zove se realna funkcija od $n$ realnih varijabli.
+\\~\\
+Funkcije od dvije, tri, $ \ldots$ varijabli zovemo realnim funkcijama od više realnih varijabli, ili kraće funkcijama više varijabli.\textsuperscript{3}
+\\~\\
+\subsubsection{Primjer funkcije više varijabli}
+$f(x,y) = x^3 + y$
+
+\pagebreak
 
 \subsection{Parcijalna derivacija}
 
 Parcijalna derivacija funkcije $f:D\rightarrow \mathbb{R} , D \subseteq \mathbb{R}^n$, po varijabli $x_i$
-u tocki $T_0=(x_1^0, x_2^0,\cdots , x_n^0)$ je derivacija funkcije jedne varijable
-$f_i:D_i \rightarrow \mathbb{R} , D_i \subseteq \mathbb{R}$ , definirane s
- $$f_i(x)=f(x_1^0, \cdots , x_{i-1}^0, x, x_{i+1}^0,\cdots , x_n^0), \quad \quad x \in D_i ,$$ u toˇcki $x_i^0$. Vrijedi,
+u točki $T_0=(x_1^0, x_2^0,\cdots , x_n^0)$ je derivacija funkcije jedne varijable
+$f_i:D_i \rightarrow \mathbb{R} , D_i \subseteq \mathbb{R}$, definirane s
+ $$f_i(x)=f(x_1^0, \cdots , x_{i-1}^0, x, x_{i+1}^0,\cdots , x_n^0), \quad \quad x \in D_i$$ u točki $x_i^0$. 
+\\~\\
+Vrijedi,
 \begin{equation*}
     \frac{\partial f (T_o)}{\partial x_i}=f_i '(x_i^0)=\displaystyle{\lim_{x \to x_i^0}}\frac{f_i(x)-f_i(x_i^0)}{x-x_i^0}
 \end{equation*}
-Ako za funkciju f u tocki $T_o$ postoje parcijalne derivacije $f_{x_i} '(T_o)$ po svim varijablama $x_i$, onda kazemo da je funkcija $f$ derivabilna
-u tocki $T_o$ . Ako je funkcija $f$ derivabilna u svakoj tocki $T \in D$, onda kazemo da je $f$ derivabilna funkcija.
-
+Ako za funkciju $f$ u točki $T_o$ postoje parcijalne derivacije $f_{x_i} '(T_o)$ po svim varijablama $x_i$, onda kažemo da je funkcija $f$ derivabilna u točki $T_o$. Ako je funkcija $f$ derivabilna u svakoj točki $T \in D$, onda kažemo da je $f$ derivabilna funkcija.
+\\
 Za parcijalne derivacije koristimo oznake:
 \begin{equation*}
     \frac{\partial f (T_o)}{\partial x_i} \; \equiv \; f_{x_i} '(T_0) \; \equiv \; f_{x_i} (T_0)
 \end{equation*}
-Neka je $A \subseteq D$ skup svih tocaka $T \in D$ u kojima postoji parcijalna
+Neka je $A \subseteq D$ skup svih točaka $T \in D$ u kojima postoji parcijalna
 derivacija $f_{x_i} '(T)$ po varijabli $x_i$. Funkciju $f_{x_i} ' : A \rightarrow \mathbb{R}$ zovemo
 parcijalna derivacija funkcije $f$ po varijabli $x_i$. Parcijalnu derivaciju
 po varijabli $x_j$
 funkcije $f_{x_i} '$
 zovemo parcijalna derivacija drugog reda
 funkcije $f$ po varijablama $\; x_i
-, \: x_j$ i oznaˇcavamo s
+, \: x_j$ i označavamo s
 
 \begin{equation*}
-    \frac{\partial^2 f }{\partial x_i \: \partial x_j} \; \equiv \; f_{x_i \: x_j} '' \; \equiv \; f_{x_i \: x_j}\; .
+    \frac{\partial^2 f }{\partial x_i \: \partial x_j} \; \equiv \; f_{x_i \: x_j} '' \; \equiv \; f_{x_i \: x_j}\; 
 \end{equation*}
-Analogno definiramo parcijalnu derivaciju tre´ceg reda funkcije $f$ po
-varijablama $x_i, x_j, x_k$:
+Kao što je napomenuto na samome početku, u slučaju parcijalne derivacije prvog i drugog reda, kada deriviramo po jednoj varijabli, druga se smatra kao konstanta.
+\\~\\
+Analogno definiramo parcijalnu derivaciju trećeg reda funkcije $f$ po
+varijablama $x_i, x_j, x_k$:\textsuperscript{4}
 \begin{equation*}
-    \frac{\partial^3 f }{\partial x_i \: \partial x_j \: \partial x_k} \; \equiv \; f_{x_i \: x_j \: x_k} ''' \; \equiv \; f_{x_i \: x_j \: x_k}\; .
+    \frac{\partial^3 f }{\partial x_i \: \partial x_j \: \partial x_k} \; \equiv \; f_{x_i \: x_j \: x_k} ''' \; \equiv \; f_{x_i \: x_j \: x_k}\;
 \end{equation*}
 
-\subsection{Derivacije višeg reda}
+\pagebreak
+
+\subsubsection{Primjer parcijalne derivacije}
+$f(x,y) = arcsin \sqrt{\frac{x-y}{x}}$
+\\
+$\frac{\partial f}{\partial x} &= \frac{1}{2x} \sqrt{\frac{y}{x-y}}$
 
 \pagebreak
 
@@ -181,10 +225,27 @@ $$
 \\~\\
 U točki $T(9, 5)$,
 \begin{flalign*}
-    \frac{\partial^2 f}{\partial xy} &= \frac{1}{4\sqrt{5}}\cdot\frac{1}{(9-5)^{\frac{3}{2}}} =\frac{1}{4\sqrt{5}}\cdot\frac{1}{4^{\frac{3}{2}}}= \frac{1}{4\sqrt{5} \cdot 2^3} &\\ 
+    \frac{\partial^2 f}{\partial xy} &= \frac{1}{4\sqrt{5}}\cdot\frac{1}{(9-5)^{\frac{3}{2}}} &\\
+    &=\frac{1}{4\sqrt{5}}\cdot\frac{1}{4^{\frac{3}{2}}} &\\
+    &= \frac{1}{4\sqrt{5} \cdot 2^3} &\\ 
     &= \frac{1}{4 \cdot 8\sqrt{5}} &\\
     &= \frac{1}{32\sqrt{5}} = 0.014
 \end{flalign*}
+\\~\\
+\subsection{Parcijalna derivacija drugog reda po yx}
+$$
+\frac{\partial^2 f}{\partial yx} &= \frac{1}{4\sqrt{y}(x-y)^{\frac{3}{2}}}
+$$
+\\~\\
+U točki $T(9, 5)$,
+\begin{flalign*}
+    \frac{\partial^2 f}{\partial yx} &= \frac{1}{32\sqrt{5}} = 0.014
+\end{flalign*}
+\\
+$$
+\therefore \frac{\partial^2 f}{\partial xy} = \frac{\partial^2 f}{\partial yx}
+$$
+
 
 \pagebreak
 
@@ -283,6 +344,10 @@ $$
 
 \pagebreak
 
+\section{Dodaci}
+
+\pagebreak
+
 \section{Zaključak}
 Spomenut ćemo još jednom dakle rezultate parcijalnih derivacija drugoga reda kao rješenje za zadatak ovog seminara:
 \\~\\
@@ -296,7 +361,7 @@ U točki $T(9, 5)$,
     \frac{\partial^2 f}{\partial x^2} &=\frac{ -17\sqrt{5} }{2592}
 \end{flalign*}
 \\~\\
-\textbf{Parcijalna derivacija drugog reda po y}
+\textbf{Parcijalna derivacija drugog reda po y:}
 $$
 \frac{\partial^2 f}{\partial y^2} &= \frac{x-2y}{4(y(x-y))^{\frac{3}{2}}}
 $$
@@ -306,18 +371,26 @@ U točki $T(9, 5)$,
     \frac{\partial^2 f}{\partial y^2} &= \frac{-1}{160\sqrt{5}}
 \end{flalign*}
 \\~\\
-\textbf{Parcijalna derivacija drugog reda po xy}
+\textbf{Parcijalna derivacija drugog reda po xy i yx:}
 $$
-\frac{\partial^2 f}{\partial xy} &= \frac{1}{4\sqrt{y}(x-y)^{\frac{3}{2}}}
+\frac{\partial^2 f}{\partial xy} &= \frac{\partial^2 f}{\partial yx} &= \frac{1}{4\sqrt{y}(x-y)^{\frac{3}{2}}}
 $$
 \\~\\
 U točki $T(9, 5)$,
 \begin{flalign*}
-    \frac{\partial^2 f}{\partial xy} &= \frac{1}{32\sqrt{5}}
+    \frac{\partial^2 f}{\partial xy} = \frac{\partial^2 f}{\partial yx} &= \frac{1}{32\sqrt{5}}
 \end{flalign*}
 
 \pagebreak
 
 \section{Literatura}
+\\~\\
+\textbf{1} - ``Derivacija", Wikipedija. \href{https://hr.wikipedia.org/wiki/Derivacija}{https://hr.wikipedia.org/wiki/Derivacija}
+\\~\\
+\textbf{2} - ``Derivacija funkcije jedne varijable", Marija Maksimović, 2022.
+\\~\\
+\textbf{3} - ``Funkcije više varijabli", grad.hr. \href{http://www.grad.hr/nastava/matematika/mat2/node3.html}{grad.hr/nastava/matematika/mat2/node3.html}
+\\~\\
+\textbf{4} - ``Derivacije funkcije više varijabli", Marija Maksimović, 2022.
 
 \end{document}
